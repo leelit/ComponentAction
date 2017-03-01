@@ -5,7 +5,7 @@
 
 2. Service的所有回调方法都始终运行在【所在进程】的【主线程】
 
-3. 如果Service运行在同一个进程，通过aidl调用【包括Service#RemoteCallBackList回调，本质也是aidl调用】运行在【调用处所在线程】，比如在主线程调用aidl#test()，则该方法运行在本进程的主线程。
+3. 如果Service运行在同一个进程，通过aidl调用运行在【调用处所在线程】，比如在主线程调用aidl#test()，则该方法运行在本进程的主线程。
 
 4. 如果Service运行在另外一个进程，则aidl调用运行在【Binder线程池】，比如在主线程调用aidl#test()，则该方法运行在远程进程的Binder线程池。
 

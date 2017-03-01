@@ -53,6 +53,7 @@
         android:text="service子线程回调" />
 
     <Button
+        android:visibility="gone"
         android:id="@+id/btn_jump_ctr_remote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

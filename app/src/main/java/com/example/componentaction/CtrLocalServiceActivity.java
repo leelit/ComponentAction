@@ -83,13 +83,14 @@ public class CtrLocalServiceActivity extends AppCompatActivity implements View.O
                         break;
 
                     case R.id.btn_jump_ctr_remote:
-                        startActivity(new Intent(CtrLocalServiceActivity.this, CtrRemoteServiceActivity.class));
+                        // 废弃，在MyService处指定process来控制是否IPC
+                        // startActivity(new Intent(CtrLocalServiceActivity.this, CtrRemoteServiceActivity.class));
                         break;
                 }
             }
         };
         runnable.run();
-//        new Thread(runnable, "---newThread---").start();
+//        new Thread(runnable, "---newBtnThread---").start();
     }
 
 
@@ -103,8 +104,9 @@ public class CtrLocalServiceActivity extends AppCompatActivity implements View.O
                 myBinder.registerCallback(new ServiceCallback.Stub() {
                     @Override
                     public void callback() throws RemoteException {
-                        Log.i("test-service", "onServiceCallback " + Utils.getCurInfo());
+                        Log.i("test-service", "Client onServiceCallback " + Utils.getCurInfo());
                         SystemClock.sleep(2000);
+                        Log.i("test-service", "Client onServiceCallback end " + Utils.getCurInfo());
                     }
 
                 });

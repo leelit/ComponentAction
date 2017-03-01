@@ -25,7 +25,7 @@ public class MyService extends Service {
 
         @Override
         public void test() throws RemoteException {
-            Log.i("test-service", "service#call sleep 2s, " + Utils.getCurInfo());
+            Log.i("test-service", "Service sleep 2s, " + Utils.getCurInfo());
             SystemClock.sleep(2000);
         }
 

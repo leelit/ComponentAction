@@ -21,11 +21,11 @@ public class Utils {
         return null;
     }
 
-    public static String getCurThread(){
-        return Thread.currentThread().toString();
+    public static String getCurThread() {
+        return Thread.currentThread().toString() + " id:" + Thread.currentThread().getId();
     }
 
-    public static String getCurInfo(){
+    public static String getCurInfo() {
         return String.format("process:%s,thread:%s", getCurProcessName(MyApplication.context), getCurThread());
     }
 }
